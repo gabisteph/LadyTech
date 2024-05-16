@@ -16,11 +16,10 @@ import com.elastech.LadyTech.repositories.TechnicalRepository;
 import com.elastech.LadyTech.repositories.UserRepository;
 
 import jakarta.servlet.http.HttpSession;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/autentication")
-public class AutenticationController {
+@RequestMapping("/authentication")
+public class AuthenticationController {
 	@Autowired
 	private UserRepository userRepository;
 	@Autowired
@@ -50,8 +49,7 @@ public class AutenticationController {
 		Technical technical = technicalRepository.findByUserName(username);
 		if (technical != null && technical.getPassword().equals(password)) {
 			session.setAttribute("technicalLogado", technical);
-			technicalLogado.setName(technical.getName());
-			technicalLogado.setIdTechnical(technical.getIdTechnical());
+			technicalLogado = technical;
 			return "redirect:/technical/consult-called";
 		}
 
@@ -66,20 +64,21 @@ public class AutenticationController {
 
 		return "redirect:/";
 	}
-	@GetMapping("/usuario-historico")
-	public String usuarioHistorico(Model model, HttpSession session) {
+	@GetMapping("/login")
+	public Model usuarioHistorico(Model model, HttpSession session) {
 		if(usuarioLogado.getName()!=null){
 			model.addAttribute("nome",usuarioLogado.getName());
 
 		}
 		if(technicalLogado.getName()!=null){
 			model.addAttribute("nome",technicalLogado.getName());
+
 		}
 		if(administratorLogado.getName()!=null){
 			model.addAttribute("nome",administratorLogado.getName());
 
 		}
-		return "usuario-historico";
+		return model;
 	}
 
 

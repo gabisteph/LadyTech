@@ -21,44 +21,51 @@
         <h2>Lady Tech</h2>
         <ul>
             <li><a th:href="@{/technical/consult-called}"><i class="fas fa-home"></i>Inicio</a></li>
-            <li><a href="#"><i class="fas fa-user"></i>Perfil</a></li>
+            <li><a href="#"><i class="fas fa-user"></i>Perfil <span th:text="${nome}"></span></a></li>
             <li><a th:href="@{/technical/consult-called-open}"><i class="fas fa-search"></i>Chamados Abertos</a></li>
             <li><a th:href="@{/technical/consult-called}"><i class="fas fa-headset"></i>Histórico Chamados</a></li>
-            <li><a th:href="@{/autentication/logout}"><i class="fas fa-sign-in-alt"></i>Sair</a></li>
+            <li><a th:href="@{/authentication/logout}"><i class="fas fa-sign-in-alt"></i>Sair</a></li>
         </ul>
     </div>
 </div>
 <div class="mt-5">
 </div>
 
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="table-container mt-5">
-                <h1 class="font-titles">Todos os Chamados</h1>
-                <table>
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Título</th>
-                        <th>Data e Hora</th>
-                        <th>Descrição</th>
-                        <th>Status</th>
-                    </tr>
-                    </thead>
-                    <tbody th:each="chamado : ${chamados}">
-                    <tr>
-                        <td th:text="${chamado.idCalled}"></td>
-                        <td th:text="${chamado.title}"></td>
-                        <td th:text="${#temporals.format(chamado.registerDate, 'dd/MM/yyyy, HH:mm')}"></td>
-                        <td th:text="${chamado.description}"></td>
-                        <td th:text="${chamado.status}"></td>
-                    </tr>
-                    </tbody>
-                </table>
+<!-- CARD COMEÇA AQUI -->
+<div class="container custom-container">
+    <div class="row">
+        <div class="col s12 offset-s1">
+            <div class="card custom-card">
+                <div class="card-content">
+                    <div class="row">
+                        <h1 class="font-titles">Histórico de chamados</h1>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Título</th>
+                                <th>Data e Hora</th>
+                                <th>Descrição</th>
+                                <th>Status</th>
+                            </tr>
+                            </thead>
+                            <tbody th:each="chamado : ${chamados}">
+                            <tr>
+                                <td th:text="${chamado.title}"></td>
+                                <td th:text="${#temporals.format(chamado.registerDate, 'dd/MM/yyyy, HH:mm')}"></td>
+                                <td th:text="${chamado.description}"></td>
+                                <td th:text="${chamado.status}"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+
+<!-- CARD TERMINA AQUI -->
 </body>
+
 </html>
