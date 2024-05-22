@@ -2,54 +2,64 @@
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
 <head>
+	<title>LadyTech</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="/styles/tela-principal.css" />
-	<title>LadyTech</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 
 <body>
 	<section class="home">
 		<div class="container">
-			<img src="/images/login.png" alt="Login" class="login.png" width="346" height="auto">
-			<form class="form" th:action="@{/authentication/login}" method="post">
-				<label for="userName">Usuário:</label>
-				<input type="text" id="userName" name="userName" required>
-				<label for="password">Senha:</label>
-				<input type="password" id="password" name="password" required>
-				<button type="submit">Login</button>
-			</form>
+			<div class="formulario">
+				<form class="form" th:action="@{/authentication/login}" method="post">
+					<div class="login-titulo">
+						<img src="/images/computador-lady.png" alt="Login" class="login.png" width="50" height="auto">
+						<h2>Lady Tech</h2>
+					</div>
+					<div class="style-usuario">
+						<label for="userName">Usuário:</label><br>
+						<input type="text" id="userName" name="userName" required>
+					</div>
+					<div class="style-senha">
+						<label for="password">Senha:</label><br>
+						<input type="password" id="password" name="password" required>
+					</div>
+					<button class="botao-login" type="submit">Logar</button>
+				</form>
+			</div>
 		</div>
 	</section>
 	<footer class="footer">
-		<div class="container">
-			<div class="footer-content">
-				<div class="github">
-				</div>
-				<div class="github-links"></div>
-				<img src="/images/git.png" alt="GitHub Logo" class="git.png" width="40" height="30" />
-				<a href="https://github.com/Anabastoslps" target="_blank">Ana Bastos</a>
-				<div class="github">
-				</div>
-				<img src="/images/git.png" alt="GitHub Logo" class="git.png" width="40" height="30" />
-				<a href="https://github.com/fernandaoliverc" target="_blank">Fernanda Oliveira</a>
-				<div class="github">
-				</div>
-				<img src="/images/git.png" alt="GitHub Logo" class="git.png" width="40" height="30" />
-				<a href="https://github.com/gabisteph" target="_blank">Gabrielle Mestrinho</a>
-				<div class="github">
-				</div>
-				<img src="/images/git.png" alt="GitHub Logo" class="git.png" width="40" height="30" />
-				<a href="https://github.com/iingrud" target="_blank">Ingrid</a>
-				<div class="github">
-				</div>
-				<img src="/images/git.png" alt="GitHub Logo" class="git.png" width="40" height="30" />
-				<a href="https://github.com/jessikaneves" target="_blank">Jéssika Neves</a>
-				<div class="github">
-				</div>
-				<img src="/images/git.png" alt="GitHub Logo" class="git.png" width="40" height="30" />
-				<a href="https://github.com/Kgisely" target="_blank">Ké</a>
+		<div class="footer-content">
+			<div class="github">
 			</div>
+			<div class="github-links"></div>
+			<img src="/images/git.png" alt="GitHub Logo" class="git.png" width="40" height="30" />
+			<a href="https://github.com/Anabastoslps" target="_blank">Ana Bastos</a>
+			<div class="github">
+			</div>
+			<img src="/images/git.png" alt="GitHub Logo" class="git.png" width="40" height="30" />
+			<a href="https://github.com/fernandaoliverc" target="_blank">Fernanda Oliveira</a>
+			<div class="github">
+			</div>
+			<img src="/images/git.png" alt="GitHub Logo" class="git.png" width="40" height="30" />
+			<a href="https://github.com/gabisteph" target="_blank">Gabrielle Mestrinho</a>
+			<div class="github">
+			</div>
+			<img src="/images/git.png" alt="GitHub Logo" class="git.png" width="40" height="30" />
+			<a href="https://github.com/iingrud" target="_blank">Ingrid</a>
+			<div class="github">
+			</div>
+			<img src="/images/git.png" alt="GitHub Logo" class="git.png" width="40" height="30" />
+			<a href="https://github.com/jessikaneves" target="_blank">Jéssika Neves</a>
+			<div class="github">
+			</div>
+			<img src="/images/git.png" alt="GitHub Logo" class="git.png" width="40" height="30" />
+			<a href="https://github.com/Kgisely" target="_blank">Ké</a>
 		</div>
 	</footer>
 </body>
